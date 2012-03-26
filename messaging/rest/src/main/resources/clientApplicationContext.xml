@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+  <bean id="restTemplate" class="org.springframework.web.client.RestTemplate">
+    <property name="messageConverters">
+      <list>
+        <bean id="messageConverter"
+          class="org.springframework.http.converter.xml.MarshallingHttpMessageConverter">
+          <property name="marshaller" ref="jaxbMarshaller" />
+          <property name="unmarshaller" ref="jaxbMarshaller" />
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+  <!-- JAXB2 marshaller. Automagically turns beans into xml -->
+  <bean id="jaxbMarshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+    <property name="classesToBeBound">
+      <list>
+        <value>com.opengate.common.xml.Code</value>
+        <value>com.opengate.common.xml.Endpoint</value>
+        <value>com.opengate.common.xml.EndpointStatus</value>
+        <value>com.opengate.common.xml.MessageStatus</value>
+        <value>com.opengate.common.xml.StatusCode</value>
+        <value>com.opengate.common.xml.Ogmessage</value>
+      </list>
+    </property>
+    <!-- Possibly include schema for validation -->
+    <property name="schema" value="classpath:schema1.xsd" />
+  </bean>
+
+</beans>

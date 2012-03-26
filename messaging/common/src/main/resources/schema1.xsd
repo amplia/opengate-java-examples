@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="bool">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:boolean">
+          <xs:attribute name="id" type="xs:int" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="boolArray">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="boolList" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:boolean">
+                <xs:attribute name="id" type="xs:int" use="required"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:int" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="deliveryStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="deliveryCode" type="deliveryCode"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="endpoint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="login" type="xs:string"/>
+        <xs:element name="channel" type="xs:string"/>
+        <xs:element name="organization" type="xs:string"/>
+        <xs:element name="password" type="xs:string"/>
+        <xs:element name="url" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="endpointStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="statusCode" type="statusCode"/>
+        <xs:element name="token" type="xs:string" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="float32">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:float">
+          <xs:attribute name="id" type="xs:int" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="float32Array">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="float32List" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:float">
+                <xs:attribute name="id" type="xs:int" use="required"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:int" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="float64">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:double">
+          <xs:attribute name="id" type="xs:int" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="float64Array">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="float64List" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:double">
+                <xs:attribute name="id" type="xs:int" use="required"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:int" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="header">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="username" type="xs:string"/>
+        <xs:element name="name" type="xs:string"/>
+        <xs:element name="messageType" type="messageType" minOccurs="0"/>
+        <xs:element ref="notifications" minOccurs="0"/>
+        <xs:element name="connector" type="xs:string" minOccurs="0"/>
+        <xs:element name="timestamp" type="xs:long" minOccurs="0"/>
+        <xs:element name="ttl" type="xs:int" minOccurs="0"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="int16">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:short">
+          <xs:attribute name="id" type="xs:int" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="int16Array">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="int16List" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:short">
+                <xs:attribute name="id" type="xs:int" use="required"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:int" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="int32">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:int">
+          <xs:attribute name="id" type="xs:int" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="int32Array">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="int32List" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:int">
+                <xs:attribute name="id" type="xs:int" use="required"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:int" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="int8">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:byte">
+          <xs:attribute name="id" type="xs:int" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="int8Array">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="int8List" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:byte">
+                <xs:attribute name="id" type="xs:int" use="required"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:int" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="messageStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="statusCode" type="code"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="notification">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="messageId" type="xs:long"/>
+        <xs:element name="type" type="notificationType"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="notifications">
+    <xs:complexType>
+      <xs:sequence/>
+      <xs:attribute name="destination" type="xs:boolean" use="required"/>
+      <xs:attribute name="error" type="xs:boolean" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="ogmessage">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="header"/>
+        <xs:element ref="payload"/>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:long" use="required"/>
+      <xs:attribute name="version" type="xs:int" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="payload">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:choice maxOccurs="unbounded" minOccurs="0">
+          <xs:element ref="bool"/>
+          <xs:element ref="int8"/>
+          <xs:element ref="int16"/>
+          <xs:element ref="int32"/>
+          <xs:element ref="uint8"/>
+          <xs:element ref="uint16"/>
+          <xs:element ref="uint32"/>
+          <xs:element ref="float32"/>
+          <xs:element ref="float64"/>
+          <xs:element ref="str"/>
+          <xs:element ref="boolArray"/>
+          <xs:element ref="int8Array"/>
+          <xs:element ref="int16Array"/>
+          <xs:element ref="int32Array"/>
+          <xs:element ref="uint8Array"/>
+          <xs:element ref="uint16Array"/>
+          <xs:element ref="uint32Array"/>
+          <xs:element ref="float32Array"/>
+          <xs:element ref="float64Array"/>
+          <xs:element ref="strArray"/>
+        </xs:choice>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="str">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="id" type="xs:int" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="strArray">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="strList" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute name="id" type="xs:int" use="required"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:int" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="uint16">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:int">
+          <xs:attribute name="id" type="xs:int" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="uint16Array">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="uint16List" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:int">
+                <xs:attribute name="id" type="xs:int" use="required"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:int" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="uint32">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:long">
+          <xs:attribute name="id" type="xs:int" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="uint32Array">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="uint32List" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:long">
+                <xs:attribute name="id" type="xs:int" use="required"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:int" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="uint8">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:byte">
+          <xs:attribute name="id" type="xs:int" use="required"/>
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:element name="uint8Array">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="uint8List" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:byte">
+                <xs:attribute name="id" type="xs:int" use="required"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:int" use="required"/>
+    </xs:complexType>
+  </xs:element>
+
+  <xs:simpleType name="messageType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NOTIFICATION"/>
+      <xs:enumeration value="EXCEPTION"/>
+      <xs:enumeration value="RESPONSE"/>
+      <xs:enumeration value="COMMAND"/>
+      <xs:enumeration value="EVENT"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="notificationType">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ERROR"/>
+      <xs:enumeration value="DESTINATION"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="code">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="INTERNAL_ERROR"/>
+      <xs:enumeration value="FORMAT_ERROR"/>
+      <xs:enumeration value="URL_ERROR"/>
+      <xs:enumeration value="DESTINATION_ERROR"/>
+      <xs:enumeration value="VALIDATION_ERROR"/>
+      <xs:enumeration value="OK"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="deliveryCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ERROR"/>
+      <xs:enumeration value="OK"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="statusCode">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GENERAL_ERROR"/>
+      <xs:enumeration value="VALIDATION_ERROR"/>
+      <xs:enumeration value="OK"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beansProjectDescription>
+	<version>1</version>
+	<pluginVersion><![CDATA[2.6.0.201103160035-RELEASE]]></pluginVersion>
+	<configSuffixes>
+		<configSuffix><![CDATA[xml]]></configSuffix>
+	</configSuffixes>
+	<enableImports><![CDATA[false]]></enableImports>
+	<configs>
+		<config>src/main/java/com/opengate/jms/common-jms.xml</config>
+		<config>src/main/java/com/opengate/jms/listener-jms.xml</config>
+		<config>src/main/java/com/opengate/jms/sender-receiver-jms.xml</config>
+	</configs>
+	<configSets>
+	</configSets>
+</beansProjectDescription>

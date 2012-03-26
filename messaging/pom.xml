@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>og-msg-examples</artifactId>
+    <packaging>pom</packaging>
+    <name>OpenGate MFS Messaging Client Examples</name>
+    <parent>
+        <groupId>opengate.mfs.examples</groupId>
+        <artifactId>og-examples</artifactId>
+        <version>og5-SNAPSHOT</version>
+    </parent>
+    <modules>
+        <module>common</module>
+        <module>jms</module>
+        <module>rest</module>
+        <module>tcp</module>
+    </modules>
+</project>

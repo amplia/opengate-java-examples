@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="connectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">
+		<property name="brokerURL" value="tcp://172.19.17.64:61616" />
+	</bean>
+
+	<!-- Spring JMS Template -->
+	<bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">
+		<property name="connectionFactory" ref="connectionFactory" />
+		<property name="messageConverter" ref="oxmMessageConverter" />
+	</bean>
+
+	<bean id="oxmMessageConverter" class="org.springframework.jms.support.converter.MarshallingMessageConverter">
+		<property name="marshaller" ref="jaxbMarshaller" />
+		<property name="unmarshaller" ref="jaxbMarshaller" />
+		<property name="targetType" value="TEXT" />
+	</bean>
+
+	<!-- JAXB2 marshaller. Automagically turns beans into xml -->
+	<bean id="jaxbMarshaller" class="org.springframework.oxm.jaxb.Jaxb2Marshaller">
+		<property name="classesToBeBound">
+			<list>
+				<value>com.opengate.common.jaxb.Ogmessage</value>
+			</list>
+		</property>
+		<!-- Possibly include schema for validation -->
+		<property name="schema" value="classpath:schema1.xsd" />
+	</bean>
+
+	<bean id="toQueue" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg value="queue/toJmsConnectorQueue" />
+	</bean>
+
+	<bean id="fromQueue" class="org.apache.activemq.command.ActiveMQQueue">
+		<constructor-arg value="queue/fromJmsConnectorQueue" />
+	</bean>
+
+</beans>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="messageController" class="com.opengate.rest.server.MessageController">
+        <property name="restTemplate" ref="restTemplate" />
+        <property name="dataHolder" ref="dataHolder" />
+    </bean>
+
+    <bean id="inboundMessageAdapter"
+          class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <ref bean="messageConverter" />
+            </list>
+        </property>
+    </bean>
+
+    <bean id="messagesView"
+          class="org.springframework.web.servlet.view.xml.MarshallingView">
+        <constructor-arg ref="jaxbMarshaller" />
+    </bean>
+
+    <bean
+        class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+        <property name="mediaTypes">
+            <map>
+                <entry key="xml" value="application/xml" />
+            </map>
+        </property>
+        <property name="viewResolvers">
+            <list>
+                <bean
+                    class="org.springframework.web.servlet.view.BeanNameViewResolver" />
+            </list>
+        </property>
+    </bean>
+</beans>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<!--
+	###############################################
+	## Pom Information 
+	###############################################
+	-->
+	<artifactId>og-fs-http-examples</artifactId>
+	<packaging>jar</packaging>
+	<name>OpenGate MFS HTTP Filesharing Client Examples</name>
+	<parent>
+		<groupId>opengate.mfs.examples</groupId>
+		<artifactId>og-fs-examples</artifactId>
+		<version>og5-SNAPSHOT</version>
+	</parent>
+	<build>
+		<defaultGoal>package</defaultGoal>
+
+		<plugins>
+			<plugin>
+				<artifactId>maven-source-plugin</artifactId>
+				<configuration>
+					<attach>true</attach>
+				</configuration>
+
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	<!--
+	###############################################
+	## Dependencies
+	###############################################
+	-->	
+	<dependencies>		
+		<dependency>
+			<groupId>commons-httpclient</groupId>
+			<artifactId>commons-httpclient</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+	</dependencies>
+	<!-- 
+	###############################################
+	## Maven environment
+	###############################################
+	-->
+	
+	
+		
+		
+		<distributionManagement>
+			<repository>
+				<id>amplia-repository</id>
+				<name>Amplia Release Repository</name>
+				<url>http://${amplia.repository.home}/amplia-releases</url>
+			</repository>
+			<snapshotRepository>
+				<id>amplia-repository</id>
+				<name>Amplia Snapshot Repository</name>
+				<url>http://${amplia.repository.home}/amplia-snapshots</url>
+			</snapshotRepository>
+		</distributionManagement>
+	
+	
+</project>

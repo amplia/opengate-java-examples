@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<import resource="classpath:com/opengate/jms/common-jms.xml"/>
+	
+	<bean id="jmsQueueSender" class="com.opengate.jms.JmsQueueSender">
+		<property name="jmsTemplate">
+			<ref bean="jmsTemplate" />
+		</property>
+		<property name="queue">
+			<ref bean="fromQueue" />
+		</property>
+	</bean>
+
+	<bean id="jmsQueueReceiver" class="com.opengate.jms.JmsQueueReceiver">
+		<property name="jmsTemplate">
+			<ref bean="jmsTemplate" />
+		</property>
+		<property name="queue">
+			<ref bean="fromQueue" />
+		</property>
+	</bean>
+
+</beans>
