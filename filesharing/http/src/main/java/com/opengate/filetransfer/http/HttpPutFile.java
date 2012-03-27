@@ -33,7 +33,7 @@ public class HttpPutFile {
 	public static void main(String[] args) {
 		try {
 			// OpenGate user login
-			String login = "default_application";
+			String login = "default_client";
 			// OpenGate user password
 			String password = "default";
 			// OpenGate user channel
@@ -41,7 +41,7 @@ public class HttpPutFile {
 			// OpenGate user organization
 			String organization = "default_organization";
 			// Local file path for upload
-			String localPath = "./filetransfer/opengate.png";
+			String localPath = "opengate.png";
 			// Remote path for upload
 			String remotePath = "opengate.png";
 
@@ -50,7 +50,7 @@ public class HttpPutFile {
 			// Neccessary remotePath encoding to avoid wrong "/" in URI
 			remotePath = URLEncoder.encode(remotePath, "UTF-8");
 			// URI composition
-			String uri = "http://172.19.17.63:9092/opengate/httpfiletransfer/"
+			String uri = "http://172.19.17.62:9090/opengate/httpfiletransfer/"
 					+ "PutFileServlet?" + "organization=" + organization
 					+ "&channel=" + channel + "&login=" + login + "&password="
 					+ password + "&remotePath=" + remotePath;

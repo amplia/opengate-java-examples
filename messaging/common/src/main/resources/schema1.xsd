@@ -237,10 +237,17 @@
         <xs:element ref="header"/>
         <xs:element ref="payload"/>
       </xs:sequence>
-      <xs:attribute name="id" type="xs:long" use="required"/>
+      <xs:attribute name="id" type="messageId" use="required"/>
       <xs:attribute name="version" type="xs:int" use="required"/>
     </xs:complexType>
   </xs:element>
+
+  <xs:simpleType name="messageId">
+    <xs:restriction base="xs:long">
+	  <xs:minInclusive value="-1" />
+	  <xs:maxInclusive value="4294967295" />
+	</xs:restriction>
+  </xs:simpleType>
 
   <xs:element name="payload">
     <xs:complexType>

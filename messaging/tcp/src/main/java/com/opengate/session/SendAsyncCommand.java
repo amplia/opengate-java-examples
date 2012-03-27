@@ -39,7 +39,7 @@ public class SendAsyncCommand extends OpenGateSessionAdapter {
 		 * In this example you can see connection method by setting previously
 		 * the connection properties.
 		 */
-		session.setIpAddress("172.19.17.63");
+		session.setIpAddress("172.19.17.62");
 		session.setPort(22500);
 		session.setUserId("default_client");
 		session.setPassword("default");

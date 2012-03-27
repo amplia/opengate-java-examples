@@ -26,13 +26,13 @@ public class ResumePutFile {
 	public static void main(String[] args) {
 		FileTransferSession fileTransferSession = new FileTransferSession();
 
-		String openGateIPAddress = "172.19.17.63";
+		String openGateIPAddress = "172.19.17.62";
 		int opengatePort = 22521;
 		String login = "default_client";
 		String password = "default";
 		String channel = "default_channel";
 		String organization = "default_organization";
-		String localPath = "./filetransfer/opengate.png";
+		String localPath = "opengate.png";
 		String remotePath = "opengate.png";
 		boolean resume = true;
 		boolean mkdirs = true;

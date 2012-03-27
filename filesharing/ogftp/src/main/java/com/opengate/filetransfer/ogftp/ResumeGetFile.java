@@ -29,7 +29,7 @@ public class ResumeGetFile {
 
 		FileTransferSession fileTransferSession = new FileTransferSession();
 
-		String openGateIPAddress = "172.19.17.63";
+		String openGateIPAddress = "172.19.17.62";
 		int opengatePort = 22521;
 		String login = "default_client";
 		String password = "default";

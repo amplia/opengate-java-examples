@@ -26,13 +26,13 @@ public class DeleteFile {
 	public static void main(String[] args) {
 		FileTransferSession fileTransferSession = new FileTransferSession();
 
-		String openGateIPAddress = "172.19.17.63";
+		String openGateIPAddress = "172.19.17.62";
 		int opengatePort = 22521;
 		String login = "default_client";
 		String password = "default";
 		String channel = "default_channel";
 		String organization = "default_organization";
-		String path = "../default_application/opengate.png";
+		String path = "./opengate.png";
 		boolean secure = false;
 		int timeout = 10000;
 //		OGMessage notification = null;

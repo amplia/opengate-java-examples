@@ -10,7 +10,7 @@
 			<ref bean="jmsTemplate" />
 		</property>
 		<property name="queue">
-			<ref bean="fromQueue" />
+			<ref bean="toQueue" />
 		</property>
 	</bean>
 

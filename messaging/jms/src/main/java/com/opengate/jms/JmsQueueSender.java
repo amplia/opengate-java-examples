@@ -31,7 +31,7 @@ public class JmsQueueSender {
         
         Header header = new Header();
         header.setName("opName");
-        header.setUsername("destination");
+        header.setUsername("default_client");
         header.setMessageType(MessageType.EVENT);
 
         ogmessage.setHeader(header);

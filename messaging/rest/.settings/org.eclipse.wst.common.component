@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-modules id="moduleCoreId" project-version="1.5.0">
     <wb-module deploy-name="opengate-mfs-client-examples-messaging-rest-og5-SNAPSHOT">
-        <wb-resource deploy-path="/" source-path="/src/main/webapp"/>
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
-        <property name="context-root" value="opengate-mfs-client-examples-messaging-rest"/>
+        <dependent-module archiveName="og-msg-common-examples-og5-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/og-msg-common-examples-og5-SNAPSHOT/og-msg-common-examples-og5-SNAPSHOT">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="java-output-path" value="/opengate-mfs-client-examples-messaging-rest-og5-SNAPSHOT/target/classes"/>
+        <property name="context-root" value="og-msg-rest-example"/>
     </wb-module>
 </project-modules>

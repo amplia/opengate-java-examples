@@ -28,14 +28,14 @@ public class GetFile {
 
 		FileTransferSession fileTransferSession = new FileTransferSession();
 
-		String openGateIPAddress = "172.19.17.63";
+		String openGateIPAddress = "172.19.17.62";
 		int opengatePort = 22521;
 		String login = "default_client";
 		String password = "default";
 		String channel = "default_channel";
 		String organization = "default_organization";
-		String localPath = "opengate2.png";
-		String remotePath = "../default_application/opengate.png";
+		String localPath = "./filetransfer/opengate2.png";
+		String remotePath = "opengate_moved.png";
 		boolean secure = false;
 		int timeout = 10000;
 

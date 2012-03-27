@@ -25,7 +25,7 @@ public class SendCommand {
         SessionListener listener = new SessionListener();
         session.setListener(listener);
 
-        String openGateIPAddress = "172.19.17.64";
+        String openGateIPAddress = "172.19.17.62";
         int opengatePort = 22500;
         String login = "default_client";
         String password = "default";

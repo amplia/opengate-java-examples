@@ -191,7 +191,7 @@ public class SessionListener implements OpenGateSessionListener {
 
     public static void main(String[] args) {
         Properties properties = new Properties();
-        properties.setProperty("opengate.host", "172.19.17.64");
+        properties.setProperty("opengate.host", "172.19.17.62");
         properties.setProperty("opengate.port", "22500");
         properties.setProperty("opengate.login", "default_client");
         properties.setProperty("opengate.password", "default");

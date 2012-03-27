@@ -44,8 +44,8 @@
         <property name="password" value="default"/>
         <property name="channel" value="default_channel"/>
         <property name="organization" value="default_organization"/>
-        <property name="baseUrl" value="http://172.19.17.64:9090/opengate/rest"/>
-        <property name="listenerUrl" value="http://172.19.17.10:8080/og-msg-rest-examples/example"/>
+        <property name="baseUrl" value="http://172.19.17.62:9090/opengate/rest"/>
+        <property name="listenerUrl" value="http://172.19.17.62:8080/og-msg-rest-examples/example"/>
     </bean>
 
 </beans>

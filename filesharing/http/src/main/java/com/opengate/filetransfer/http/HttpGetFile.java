@@ -41,7 +41,7 @@ public class HttpGetFile {
 			// OpenGate user organization
 			String organization = "default_organization";
 			// Local file path for upload
-			String localPath = "opengate.png";
+			String localPath = "./filetransfer/opengate2.png";
 			// Remote path for upload
 			String remotePath = "../default_client/opengate.png";
 			remotePath = URLEncoder.encode(remotePath, "UTF-8");
@@ -49,7 +49,7 @@ public class HttpGetFile {
 			// Neccessary remotePath encoding to avoid wrong "/" in URI
 			remotePath = URLEncoder.encode(remotePath, "UTF-8");
 			// URI composition
-			String uri = "http://172.19.17.63:9092/opengate/httpfiletransfer/"
+			String uri = "http://172.19.17.62:9090/opengate/httpfiletransfer/"
 					+ "GetFileServlet?" + "organization=" + organization
 					+ "&channel=" + channel + "&login=" + login + "&password="
 					+ password + "&remotePath=" + remotePath;

@@ -71,7 +71,8 @@ public class OpenGateHelperServlet extends HttpServlet {
             writer.println("Send Message report");
 
             Ogmessage ogmessage = new Ogmessage();
-            ogmessage.setId(System.currentTimeMillis());
+            ogmessage.setId(System.currentTimeMillis()/1000);
+//            ogmessage.setId(4294967295L);
             ogmessage.setVersion(5);
 
             Header header = new Header();

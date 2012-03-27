@@ -33,7 +33,7 @@ public class GetPlatformDate {
 		 * object containing connection properties.
 		 */
 		Properties properties = new Properties();
-		properties.setProperty("opengate.host", "172.19.17.63");
+		properties.setProperty("opengate.host", "172.19.17.62");
 		properties.setProperty("opengate.port", "22500");
 		properties.setProperty("opengate.login", "default_client");
 		properties.setProperty("opengate.password", "default");

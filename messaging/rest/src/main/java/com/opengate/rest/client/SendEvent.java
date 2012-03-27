@@ -23,11 +23,11 @@ public class SendEvent {
         String channel = "default_channel";
         String organization = "default_organization";
         String token = null;
-        String baseUrl = "http://172.19.17.64:9090/opengate/rest/messages/";
+        String baseUrl = "http://172.19.17.62:9090/opengate/rest/messages/";
 
         System.out.println("Setting Endpoint...");
-        String listenerUrl = "http://172.19.17.64:8080/og-msg-rest-examples";
-        String endpointUrl = "http://172.19.17.64:9090/opengate/rest/endpoints";
+        String listenerUrl = "http://172.19.17.62:8080/og-msg-rest-examples";
+        String endpointUrl = "http://172.19.17.62:9090/opengate/rest/endpoints";
         String password = "default";
 
         Endpoint endpoint = new Endpoint();

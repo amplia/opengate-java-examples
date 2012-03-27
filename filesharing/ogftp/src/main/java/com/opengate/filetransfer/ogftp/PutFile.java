@@ -26,13 +26,13 @@ public class PutFile {
 	public static void main(String[] args) {
 		FileTransferSession fileTransferSession = new FileTransferSession();
 
-		String openGateIPAddress = "172.19.17.59";
+		String openGateIPAddress = "172.19.17.62";
 		int opengatePort = 22521;
 		String login = "default_client";
 		String password = "default";
 		String channel = "default_channel";
 		String organization = "default_organization";
-		String localPath = "./filetransfer/opengate.png";
+		String localPath = "opengate.png";
 		String remotePath = "opengate.png";
 		boolean secure = false;
 		int timeout = 10000;
